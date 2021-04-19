@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseline Results</title>
+</head>
+<body>
+    <h1>Results</h1><br>
+    <div id="images" style="text-align: center;"></div>
+    <script>
+        for(let i=0;i<18;i++){
+            var img = document.createElement("img");
+            img.src = "./"+i+".png";
+            img.height=550;
+            img.width=775;
+            document.getElementById("images").appendChild(img);
+            var b = document.createElement("hr");
+            document.getElementById("images").appendChild(b);
+            console.log("./Figure_"+i+".png");
+        }
+    </script>
+</body>
+</html>
