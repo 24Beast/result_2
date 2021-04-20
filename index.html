@@ -12,8 +12,9 @@
     <script>
         for(let i=0;i<18;i++){
             var img = document.createElement("img");
-            img.src = "./"+i+".png";
-            img.onerror = function(){
+            if(i==0){
+                img.src = "./"+i+".png";
+            }else{
                 img.src = "./"+i+".PNG";
             }
             img.height=550;
