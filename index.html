@@ -13,6 +13,9 @@
         for(let i=0;i<18;i++){
             var img = document.createElement("img");
             img.src = "./"+i+".png";
+            img.onerror = function(){
+                img.src = "./"+i+".PNG";
+            }
             img.height=550;
             img.width=775;
             document.getElementById("images").appendChild(img);
