@@ -19,8 +19,13 @@
             }
             
             for(let j=1;j<8;j++){
-                var text1 = document.createTextNode("Image No. "+i+".");
-                document.getElementById("Inpaint").appendChild(text1);
+                if(i>6){
+                    var text1 = document.createTextNode("Image No. "+(i-1)+".");
+                    document.getElementById("Inpaint").appendChild(text1);
+                }else{
+                    var text1 = document.createTextNode("Image No. "+i+".");
+                    document.getElementById("Inpaint").appendChild(text1);
+                }
                 var text = document.createTextNode(j);
                 document.getElementById("Inpaint").appendChild(text);
                 var img2 = document.createElement("img");
