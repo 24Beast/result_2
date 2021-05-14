@@ -7,22 +7,48 @@
     <title>Baseline Results</title>
 </head>
 <body>
-    <h1>Results</h1><br>
-    <div id="images" style="text-align: center;"></div>
+    <link rel="stylesheet" href="style.css">
+    <div id="Inpaint" style="text-align: center;">
+        <h1>Inpainting Results</h1><br>
+        <h2>Original &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Mask &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Generated &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Masked</h2>
+    </div>
     <script>
-        for(let i=0;i<18;i++){
-            var img = document.createElement("img");
-            if(i==0){
-                img.src = "./"+i+".png";
-            }else{
-                img.src = "./"+i+".PNG";
+        for(let i = 0;i<17;i++){
+            if(i==6){
+                continue;
             }
-            img.height=550;
-            img.width=775;
-            document.getElementById("images").appendChild(img);
-            var b = document.createElement("hr");
-            document.getElementById("images").appendChild(b);
-            console.log("./Figure_"+i+".png");
+            
+            for(let j=1;j<8;j++){
+                var text1 = document.createTextNode("Image No. "+i+".");
+                document.getElementById("Inpaint").appendChild(text1);
+                var text = document.createTextNode(j);
+                document.getElementById("Inpaint").appendChild(text);
+                var img2 = document.createElement("img");
+                img2.src = "./imgs/Input/"+i+"_edit.jpg";
+                img2.height=256;
+                img2.width=256;
+                document.getElementById("Inpaint").appendChild(img2);
+                var img3 = document.createElement("img");
+                img3.src = "./imgs/Input/"+i+"_edit_mask.jpg";
+                img3.height=256;
+                img3.width=256;
+                document.getElementById("Inpaint").appendChild(img3);
+                var img = document.createElement("img");
+                img.src = "./imgs/Output/"+i+"/start_scale="+j+".png";
+                img.height=256;
+                img.width=256;
+                document.getElementById("Inpaint").appendChild(img);
+                var img1 = document.createElement("img");
+                img1.src = "./imgs/Output/"+i+"/start_scale="+j+"_masked.png";
+                img1.height=256;
+                img1.width=256;
+                document.getElementById("Inpaint").appendChild(img1);
+                var b = document.createElement("hr");
+                if(j==7){
+                    b.color="blue";
+                }
+                document.getElementById("Inpaint").appendChild(b);
+            }
         }
     </script>
 </body>
